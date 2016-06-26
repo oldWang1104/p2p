@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="ALARM_USER">
+	<typeAlias alias="User" type="com.julend.p2p.model.User" />
+	
+	<select id="QueryUserList" resultClass="User">
+		select * from user
+	</select>
+
+	<select id="QueryUserByUsernameAndPass" resultClass="User" parameterClass="User">
+		select * from user where name=#name# and password=#password#
+	</select>
+
+	<insert id="AddUser" parameterClass="User">
+		insert into user(name,cname,password,email,mobile,phone)
+		values(#name#,#cname#,#password#,#email#,#mobile#,#phone#)
+	</insert>
+
+	<update id="UpdateUser" parameterClass="User">
+		update user set cname=#cname# where id=#id#
+	</update>
+
+	<delete id="DeleteUserById" parameterClass="int">
+		delete from user where id=#value#
+	</delete>
+
+</sqlMap>

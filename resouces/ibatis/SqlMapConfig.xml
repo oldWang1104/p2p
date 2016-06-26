@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE sqlMapConfig 
+    PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN" 
+    "http://www.ibatis.com/dtd/sql-map-config-2.dtd">  
+<sqlMapConfig>
+   <!--  <properties resource="ibatis/jdbc.properties" />    
+    <transactionManager type="JDBC">    
+        <dataSource type="SIMPLE">    
+            <property name="JDBC.Driver" value="${hibernate.connection.driver_class}" />    
+            <property name="JDBC.ConnectionURL" value="${hibernate.connection.url}" />    
+            <property name="JDBC.Username" value="${hibernate.connection.username}" />    
+            <property name="JDBC.Password" value="${hibernate.connection.password}" />    
+        </dataSource>    
+    </transactionManager>  -->
+    <settings 
+	    cacheModelsEnabled="true" 
+	    lazyLoadingEnabled="true"
+	    maxSessions="64" 
+	    maxTransactions="8" 
+	    maxRequests="128"
+	/>
+    <sqlMap resource="com/julend/p2p/model/User.xml" />
+</sqlMapConfig>
