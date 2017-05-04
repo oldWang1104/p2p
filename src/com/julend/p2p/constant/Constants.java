@@ -8,7 +8,5 @@ public class Constants {
 	public static final String USER_SESSION_KEY = "session_user";
 
 	public static final String USER_NAME = "Michael";
-
-	public static final String PASSWORD = "ABC123";
 	
 }
